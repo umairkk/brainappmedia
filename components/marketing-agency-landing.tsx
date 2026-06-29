@@ -990,7 +990,7 @@ function TestimonialsSection() {
                 ))}
               </div>
               <blockquote className="text-base leading-8 text-slate-200">
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </blockquote>
               <figcaption className="mt-7 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl brand-gradient text-sm font-black text-white">
@@ -1139,7 +1139,8 @@ function ContactSection() {
             <Send className="h-4 w-4" />
           </button>
           <p className="mt-4 text-center text-xs leading-6 text-slate-400">
-            Prefer WhatsApp? Message us directly and mention "Free Audit" for a faster response.
+            Prefer WhatsApp? Message us directly and mention &quot;Free Audit&quot; for a faster
+            response.
           </p>
         </motion.form>
       </div>
