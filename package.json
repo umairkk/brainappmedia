@@ -1,0 +1,40 @@
+{
+  "name": "brainappmedia",
+  "version": "1.0.0",
+  "description": "Premium digital marketing agency website for Pakistan.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umairkk/brainappmedia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/umairkk/brainappmedia/issues"
+  },
+  "homepage": "https://github.com/umairkk/brainappmedia#readme",
+  "dependencies": {
+    "framer-motion": "^12.42.0",
+    "lucide-react": "^1.22.0",
+    "next": "^16.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "@types/node": "^26.0.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.6.0",
+    "eslint-config-next": "^16.2.9",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^6.0.3"
+  }
+}
