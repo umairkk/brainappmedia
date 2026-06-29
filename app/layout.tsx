@@ -1,14 +1,21 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brainappmedia.com"),
   title: {
-    default: "BrainApp Media | Pakistan Performance Marketing Agency",
+    default: "BrainApp Media | Revenue-Focused Digital Marketing Agency Pakistan",
     template: "%s | BrainApp Media",
   },
   description:
-    "Grow your business online with Pakistan's performance marketing experts for Google Ads, Meta Ads, SEO, ecommerce growth, automation, and lead generation.",
+    "BrainApp Media is a revenue-focused digital marketing agency in Pakistan helping businesses prove marketing impact through Google Ads, Meta Ads, SEO, automation, and conversion strategy.",
   keywords: [
     "digital marketing agency Pakistan",
     "Google Ads Pakistan",
@@ -18,9 +25,9 @@ export const metadata: Metadata = {
     "lead generation agency",
   ],
   openGraph: {
-    title: "BrainApp Media | Pakistan Performance Marketing Agency",
+    title: "BrainApp Media | Revenue-Focused Digital Marketing Agency Pakistan",
     description:
-      "Premium growth marketing for ecommerce stores, real estate, local services, startups, and international brands.",
+      "WebFX-inspired revenue marketing for ecommerce stores, real estate, local services, startups, and international brands.",
     url: "https://brainappmedia.com",
     siteName: "BrainApp Media",
     locale: "en_PK",
@@ -28,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BrainApp Media | Pakistan Performance Marketing Agency",
+    title: "BrainApp Media | Revenue-Focused Digital Marketing Agency Pakistan",
     description:
       "Google Ads, Meta Ads, SEO, automation, and conversion strategy for businesses in Pakistan and beyond.",
   },
@@ -39,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#083A74",
   width: "device-width",
   initialScale: 1,
 };
@@ -51,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.variable}>
         <div className="noise-overlay" />
         {children}
       </body>
