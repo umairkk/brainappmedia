@@ -37,7 +37,7 @@ export default function ResourcesPage() {
                   href={`/resources/${article.slug}`}
                   className="block h-full rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-electric/30 hover:shadow-md"
                 >
-                  <p className="text-xs font-bold uppercase tracking-wider text-teal">
+                  <p className="text-xs font-bold uppercase tracking-wider text-brand">
                     {article.readMinutes} min read
                   </p>
                   <h2 className="mt-2 text-xl font-semibold text-navy">{article.title}</h2>

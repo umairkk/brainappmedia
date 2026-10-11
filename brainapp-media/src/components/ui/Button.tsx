@@ -4,11 +4,11 @@ import { ComponentPropsWithoutRef } from "react";
 
 const variants = {
   primary:
-    "bg-electric text-white hover:bg-[#1d4ed8] shadow-sm shadow-electric/25",
+    "bg-brand text-navy hover:bg-[#e6ac00] shadow-sm shadow-brand/30 hover:shadow-brand/40",
   secondary:
-    "bg-white text-navy border border-navy/15 hover:border-electric hover:text-electric",
+    "bg-white text-navy border border-navy/15 hover:border-brand hover:text-navy",
   ghost: "bg-transparent text-white border border-white/30 hover:bg-white/10",
-  teal: "bg-teal text-navy hover:bg-[#0d9488] text-navy font-semibold",
+  teal: "bg-brand text-navy hover:bg-[#e6ac00] font-bold",
 };
 
 type ButtonProps = {
@@ -26,7 +26,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const classes = clsx(
-    "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric disabled:opacity-50",
+    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 text-sm font-bold transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98]",
     variants[variant],
     className,
   );

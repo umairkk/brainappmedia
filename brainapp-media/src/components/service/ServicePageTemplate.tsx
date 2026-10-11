@@ -23,7 +23,7 @@ export function ServicePageTemplate({ content }: { content: ServiceContent }) {
             ]}
           />
           <FadeIn>
-            <p className="text-sm font-semibold uppercase tracking-wider text-teal">
+            <p className="text-sm font-semibold uppercase tracking-wider text-brand">
               BrainApp Media Services
             </p>
             <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
@@ -104,7 +104,7 @@ export function ServicePageTemplate({ content }: { content: ServiceContent }) {
         <h2 className="mt-14 text-2xl font-bold text-navy">How we measure progress</h2>
         <p className="mt-4 max-w-3xl leading-relaxed text-body/85">{content.measurement}</p>
         {content.conceptNote && (
-          <p className="mt-6 max-w-3xl rounded-xl border border-teal/30 bg-teal/5 p-4 text-sm text-body/85">
+          <p className="mt-6 max-w-3xl rounded-xl border border-brand/30 bg-brand/5 p-4 text-sm text-body/85">
             {content.conceptNote}
           </p>
         )}

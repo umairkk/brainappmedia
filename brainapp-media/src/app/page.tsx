@@ -4,7 +4,10 @@ import type { Metadata } from "next";
 import { ProposalForm } from "@/components/forms/ProposalForm";
 import { HeroVisual } from "@/components/home/HeroVisual";
 import { HomeServiceTabs } from "@/components/home/HomeServiceTabs";
+import { HomeStatsStrip } from "@/components/home/HomeStatsStrip";
+import { ServiceMarquee } from "@/components/home/ServiceMarquee";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { TextReveal } from "@/components/motion/TextReveal";
 import { PortfolioGrid } from "@/components/portfolio/PortfolioGrid";
 import { Accordion } from "@/components/ui/Accordion";
 import { Button } from "@/components/ui/Button";
@@ -130,31 +133,50 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-navy text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-electric/20 via-transparent to-transparent" />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-90"
+          aria-hidden
+          style={{
+            background:
+              "radial-gradient(circle at 18% 25%, rgba(255,193,7,0.14), transparent 40%), radial-gradient(circle at 82% 65%, rgba(255,193,7,0.08), transparent 42%)",
+          }}
+        />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:48px_48px] motion-safe:animate-[float-x_20s_ease-in-out_infinite] motion-reduce:animate-none" />
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 lg:grid-cols-2 lg:px-6 lg:py-24">
-          <FadeIn>
-            <p className="text-sm font-semibold uppercase tracking-wider text-teal">
-              BrainApp Media
-            </p>
-            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-[3.15rem]">
-              Digital Marketing & Creative Design That Move Your Business Forward
-            </h1>
-            <p className="mt-6 max-w-xl text-lg text-white/80">
-              Bring your marketing, website, and brand together with strategies built to attract the
-              right audience and turn interest into action.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/get-proposal">Get a Free Proposal</Button>
-              <Button href="/services" variant="ghost">
-                Explore Our Services
-              </Button>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.15} className="relative">
+          <div>
+            <FadeIn>
+              <p className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand">
+                <span className="h-2 w-2 rounded-full bg-brand motion-safe:animate-pulse" />
+                BrainApp Media
+              </p>
+            </FadeIn>
+            <TextReveal
+              as="h1"
+              delay={0.1}
+              className="mt-5 text-4xl font-black leading-[1.08] tracking-tight md:text-5xl lg:text-[3.15rem]"
+              text="Digital Marketing & Creative Design That Move Your Business Forward"
+            />
+            <FadeIn delay={0.35}>
+              <p className="mt-6 max-w-xl text-lg text-white/80">
+                Bring your marketing, website, and brand together with strategies built to attract
+                the right audience and turn interest into action.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button href="/get-proposal">Get a Free Proposal</Button>
+                <Button href="/services" variant="ghost">
+                  Explore Our Services
+                </Button>
+              </div>
+            </FadeIn>
+          </div>
+          <FadeIn delay={0.2} className="relative">
             <HeroVisual />
           </FadeIn>
         </div>
       </section>
+
+      <ServiceMarquee />
+      <HomeStatsStrip />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
         <FadeIn>
@@ -167,7 +189,7 @@ export default function HomePage() {
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {goals.map((g, i) => (
             <FadeIn key={g.title} delay={i * 0.05}>
-              <li className="flex h-full list-none flex-col rounded-2xl border border-navy/10 bg-white p-6 shadow-sm">
+              <li className="card-hover-lift flex h-full list-none flex-col rounded-2xl border border-navy/10 bg-white p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-navy">{g.title}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-body/85">{g.body}</p>
                 <ul className="mt-4 space-y-1 border-t border-navy/5 pt-4 text-sm">
@@ -198,7 +220,7 @@ export default function HomePage() {
             {serviceGroups.map((group, i) => (
               <FadeIn key={group.title} delay={i * 0.06}>
                 <div className="flex h-full flex-col rounded-2xl border border-navy/10 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-md">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-teal">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-brand">
                     {group.title}
                   </h3>
                   <ul className="mt-4 flex-1 space-y-2 text-sm text-body/85">
@@ -298,10 +320,10 @@ export default function HomePage() {
                   </Link>
                 </div>
                 <div
-                  className="flex h-32 w-full shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-light-bg to-electric/10 lg:w-48"
+                  className="flex h-32 w-full shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-soft to-brand/30 lg:w-48"
                   aria-hidden
                 >
-                  <span className="text-4xl font-bold text-electric/30">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-4xl font-black text-navy/25">{String(i + 1).padStart(2, "0")}</span>
                 </div>
               </article>
             </FadeIn>
@@ -349,8 +371,8 @@ export default function HomePage() {
           <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {processPreview.map((item, i) => (
               <FadeIn key={item.step} delay={i * 0.05}>
-                <li className="list-none rounded-2xl bg-white p-6 shadow-sm ring-1 ring-navy/5 transition hover:ring-teal/40">
-                  <span className="text-sm font-bold text-teal">Step {i + 1}</span>
+                <li className="card-hover-lift list-none rounded-2xl bg-white p-6 shadow-sm ring-1 ring-navy/5 transition hover:ring-brand/50">
+                  <span className="text-sm font-bold text-brand">Step {i + 1}</span>
                   <h3 className="mt-2 text-lg font-semibold text-navy">{item.step}</h3>
                   <p className="mt-2 text-sm text-body/85">{item.text}</p>
                 </li>
@@ -411,7 +433,7 @@ export default function HomePage() {
                     href={`/resources/${article.slug}`}
                     className="block h-full rounded-2xl border border-navy/10 bg-white p-6 transition hover:shadow-md"
                   >
-                    <p className="text-xs font-bold uppercase text-teal">
+                    <p className="text-xs font-bold uppercase text-brand">
                       {article.readMinutes} min read
                     </p>
                     <h3 className="mt-2 font-semibold text-navy">{article.title}</h3>

@@ -68,7 +68,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-navy/10 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-6">
-        <Logo />
+        <Logo priority />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           <div
@@ -117,7 +117,7 @@ export function Header() {
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                   {serviceGroups.map((group) => (
                     <div key={group.title}>
-                      <p className="mb-3 text-xs font-bold uppercase tracking-wider text-teal">
+                      <p className="mb-3 text-xs font-bold uppercase tracking-wider text-brand">
                         {group.title}
                       </p>
                       <ul className="space-y-2">
@@ -246,7 +246,7 @@ export function Header() {
                 <div className="space-y-4 pb-3 pl-2">
                   {serviceGroups.map((group) => (
                     <div key={group.title}>
-                      <p className="px-3 text-xs font-bold uppercase text-teal">
+                      <p className="px-3 text-xs font-bold uppercase text-brand">
                         {group.title}
                       </p>
                       <ul className="mt-1">

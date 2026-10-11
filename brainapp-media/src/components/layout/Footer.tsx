@@ -11,7 +11,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 lg:px-6">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Logo variant="light" />
+            <Logo variant="on-dark" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/75">
               BrainApp Media helps small and medium businesses connect marketing,
               websites, and brand design into practical growth programs—with clear
@@ -22,7 +22,7 @@ export function Footer() {
           <div className="grid gap-8 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-4">
             {serviceGroups.map((group) => (
               <div key={group.title}>
-                <h2 className="text-xs font-bold uppercase tracking-wider text-teal">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-brand">
                   {group.title}
                 </h2>
                 <ul className="mt-4 space-y-2">

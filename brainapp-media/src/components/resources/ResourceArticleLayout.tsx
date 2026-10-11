@@ -20,7 +20,7 @@ export function ResourceArticleLayout({ article }: { article: ResourceArticle })
             ]}
           />
           <FadeIn>
-            <p className="text-sm font-semibold text-teal">{article.readMinutes} min read</p>
+            <p className="text-sm font-semibold text-brand">{article.readMinutes} min read</p>
             <h1 className="mt-2 max-w-3xl text-4xl font-bold tracking-tight text-navy md:text-5xl">
               {article.title}
             </h1>
@@ -53,7 +53,7 @@ export function ResourceArticleLayout({ article }: { article: ResourceArticle })
               </ol>
               {related && (
                 <div className="mt-8 border-t border-navy/10 pt-6">
-                  <p className="text-xs font-bold uppercase tracking-wider text-teal">
+                  <p className="text-xs font-bold uppercase tracking-wider text-brand">
                     Related service
                   </p>
                   <Link

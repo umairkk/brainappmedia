@@ -23,7 +23,7 @@ export function IndustryPageTemplate({ content }: { content: IndustryContent }) 
             ]}
           />
           <FadeIn>
-            <p className="text-sm font-semibold uppercase tracking-wider text-teal">
+            <p className="text-sm font-semibold uppercase tracking-wider text-brand">
               Industries we serve
             </p>
             <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">

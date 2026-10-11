@@ -181,7 +181,7 @@ export function ProposalForm({ compact = false }: { compact?: boolean }) {
           className={clsx(
             "rounded-lg border px-4 py-3 text-sm leading-relaxed",
             state === "validated"
-              ? "border-teal/40 bg-teal/10 text-navy"
+              ? "border-brand/40 bg-brand/10 text-navy"
               : "border-amber-300 bg-amber-50 text-body",
           )}
         >

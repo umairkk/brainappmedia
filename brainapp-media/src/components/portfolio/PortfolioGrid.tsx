@@ -20,8 +20,8 @@ const filters: CategoryFilter[] = [
 function ProjectVisual({ category }: { category: PortfolioProject["category"] }) {
   const styles: Record<PortfolioProject["category"], string> = {
     websites: "from-electric/20 to-navy/10",
-    ecommerce: "from-teal/25 to-electric/10",
-    branding: "from-amber-100 to-teal/15",
+    ecommerce: "from-brand/25 to-electric/10",
+    branding: "from-amber-100 to-brand/15",
     "ad-creatives": "from-fuchsia-100 to-electric/15",
   };
 
@@ -88,7 +88,7 @@ export function PortfolioGrid({ projects }: { projects: PortfolioProject[] }) {
             >
               <ProjectVisual category={project.category} />
               <div className="flex flex-1 flex-col p-5">
-                <p className="text-xs font-bold uppercase tracking-wider text-teal">
+                <p className="text-xs font-bold uppercase tracking-wider text-brand">
                   {portfolioCategoryLabels[project.category]}
                 </p>
                 <h2 className="mt-2 text-lg font-semibold text-navy group-hover:text-electric">

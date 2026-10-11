@@ -18,7 +18,7 @@ export function PortfolioProjectTemplate({ project }: { project: PortfolioProjec
             ]}
           />
           <FadeIn>
-            <p className="text-sm font-semibold uppercase tracking-wider text-teal">
+            <p className="text-sm font-semibold uppercase tracking-wider text-brand">
               {portfolioCategoryLabels[project.category]} · Concept project
             </p>
             <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
@@ -53,7 +53,7 @@ export function PortfolioProjectTemplate({ project }: { project: PortfolioProjec
               <li key={step}>{step}</li>
             ))}
           </ol>
-          <p className="rounded-xl border border-teal/30 bg-teal/5 p-4 text-sm">
+          <p className="rounded-xl border border-brand/30 bg-brand/5 p-4 text-sm">
             This portfolio entry is a concept project illustrating BrainApp Media&apos;s process and
             deliverable quality. Client names and performance metrics can be added when you have
             approved case studies to publish.
