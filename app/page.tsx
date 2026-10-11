@@ -1,5 +1,5 @@
-import { MarketingAgencyLanding } from "@/components/marketing-agency-landing";
+import { NeurvaHeroLanding } from "@/components/neurva-hero-landing";
 
 export default function Home() {
-  return <MarketingAgencyLanding />;
+  return <NeurvaHeroLanding />;
 }
