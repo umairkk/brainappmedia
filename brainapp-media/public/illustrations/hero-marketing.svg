@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" role="img" aria-label="Abstract marketing dashboard illustration">
+  <rect width="400" height="400" rx="32" fill="#F4F7FB"/>
+  <rect x="48" y="56" width="304" height="288" rx="16" fill="#fff" stroke="#0B1630" stroke-opacity="0.08"/>
+  <rect x="72" y="80" width="120" height="12" rx="6" fill="#2563EB" fill-opacity="0.35"/>
+  <rect x="72" y="104" width="200" height="8" rx="4" fill="#0B1630" fill-opacity="0.12"/>
+  <rect x="72" y="120" width="160" height="8" rx="4" fill="#0B1630" fill-opacity="0.08"/>
+  <rect x="72" y="152" width="88" height="72" rx="12" fill="#14B8A6" fill-opacity="0.25"/>
+  <rect x="168" y="152" width="88" height="72" rx="12" fill="#2563EB" fill-opacity="0.2"/>
+  <rect x="264" y="152" width="64" height="72" rx="12" fill="#0B1630" fill-opacity="0.08"/>
+  <rect x="72" y="248" width="256" height="36" rx="10" fill="#2563EB" fill-opacity="0.45"/>
+  <circle cx="320" cy="88" r="28" fill="#14B8A6" fill-opacity="0.3"/>
+</svg>
