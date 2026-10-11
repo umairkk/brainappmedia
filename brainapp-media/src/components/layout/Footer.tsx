@@ -11,7 +11,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 lg:px-6">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Logo variant="on-dark" />
+            <Logo variant="on-dark" size="footer" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/75">
               BrainApp Media helps small and medium businesses connect marketing,
               websites, and brand design into practical growth programs—with clear

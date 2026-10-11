@@ -4,11 +4,24 @@ import clsx from "clsx";
 
 type LogoProps = {
   variant?: "default" | "on-dark";
+  size?: "header" | "footer" | "hero" | "default";
   className?: string;
   priority?: boolean;
 };
 
-export function Logo({ variant = "default", className, priority }: LogoProps) {
+const sizeClasses = {
+  header: "h-7 w-auto max-w-[128px] sm:h-8 sm:max-w-[148px] lg:h-9 lg:max-w-[168px]",
+  footer: "h-9 w-auto max-w-[160px] md:h-10 md:max-w-[180px]",
+  hero: "h-11 w-auto max-w-[200px] md:h-12 md:max-w-[220px]",
+  default: "h-9 w-auto max-w-[168px] md:h-10 md:max-w-[188px]",
+};
+
+export function Logo({
+  variant = "default",
+  size = "default",
+  className,
+  priority,
+}: LogoProps) {
   return (
     <Link
       href="/"
@@ -18,7 +31,7 @@ export function Logo({ variant = "default", className, priority }: LogoProps) {
       <span
         className={clsx(
           "relative block leading-none",
-          variant === "on-dark" && "rounded-xl bg-white px-3 py-2 shadow-sm",
+          variant === "on-dark" && "rounded-lg bg-white px-2 py-1 shadow-sm",
         )}
       >
         <Image
@@ -27,7 +40,7 @@ export function Logo({ variant = "default", className, priority }: LogoProps) {
           width={500}
           height={500}
           priority={priority}
-          className="h-10 w-auto max-w-[min(100%,220px)] object-contain object-left md:h-11 md:max-w-[240px]"
+          className={clsx("object-contain object-left", sizeClasses[size])}
         />
       </span>
     </Link>

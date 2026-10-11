@@ -1,7 +1,7 @@
 "use client";
 
-import { FadeIn } from "@/components/motion/FadeIn";
 import { CountUp } from "@/components/motion/CountUp";
+import { motion, useReducedMotion } from "framer-motion";
 
 const stats = [
   {
@@ -31,23 +31,25 @@ const stats = [
 ];
 
 export function HomeStatsStrip() {
+  const reduce = useReducedMotion();
+
   return (
-    <section className="relative bg-white py-12">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:grid-cols-2 lg:grid-cols-4 lg:px-6">
+    <section className="relative z-20 -mt-10 px-4 pb-4 lg:-mt-14 lg:px-6">
+      <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat, i) => (
-          <FadeIn key={stat.label} delay={i * 0.08}>
-            <div className="group relative overflow-hidden rounded-2xl border border-navy/10 bg-light-bg p-6 transition duration-300 hover:border-brand/50 hover:shadow-lg hover:shadow-brand/10">
-              <div
-                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-brand/20 opacity-0 transition group-hover:opacity-100 animate-pulse-ring motion-reduce:animate-none"
-                aria-hidden
-              />
-              <p className="text-4xl font-black tracking-tight text-navy">
-                <CountUp value={stat.value} suffix={stat.suffix} />
-              </p>
-              <p className="mt-2 font-semibold text-navy">{stat.label}</p>
-              <p className="mt-1 text-sm text-body/70">{stat.detail}</p>
-            </div>
-          </FadeIn>
+          <motion.div
+            key={stat.label}
+            className="rounded-2xl border border-navy/10 bg-white p-6 shadow-xl shadow-navy/10"
+            initial={reduce ? false : { opacity: 0, y: 24 }}
+            animate={reduce ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.15 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="text-4xl font-black tracking-tight text-navy md:text-5xl">
+              <CountUp value={stat.value} suffix={stat.suffix} />
+            </p>
+            <p className="mt-2 font-bold text-navy">{stat.label}</p>
+            <p className="mt-1 text-sm text-body/70">{stat.detail}</p>
+          </motion.div>
         ))}
       </div>
     </section>

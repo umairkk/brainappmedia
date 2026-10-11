@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FadeIn } from "@/components/motion/FadeIn";
+import { ImageReveal } from "@/components/motion/ImageReveal";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
@@ -25,7 +26,8 @@ export default function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-14 lg:px-6">
-        <div className="prose-bam max-w-3xl">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
+          <div className="prose-bam max-w-3xl">
           <FadeIn>
             <p>
               Most growing companies juggle a website vendor, an ads freelancer, and a designer who
@@ -62,10 +64,18 @@ export default function AboutPage() {
             <Button href="/get-proposal" variant="secondary">
               Get a Free Proposal
             </Button>
-            <Link href="/contact" className="inline-flex items-center text-sm font-semibold text-electric hover:underline">
+            <Link href="/contact" className="inline-flex items-center text-sm font-semibold text-navy hover:text-brand">
               Contact →
             </Link>
           </div>
+          </div>
+          <FadeIn delay={0.1}>
+            <ImageReveal
+              src="/images/sections/workspace.jpg"
+              alt="Collaborative workspace for marketing and design projects"
+              className="aspect-[4/5] lg:sticky lg:top-24"
+            />
+          </FadeIn>
         </div>
       </section>
     </>
