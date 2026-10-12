@@ -1,21 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-instrument",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brainappmedia.com"),
   title: {
-    default: "BrainApp Media | Revenue-Focused Digital Marketing Agency Pakistan",
-    template: "%s | BrainApp Media",
+    default: "Neurva | Make sense of it all",
+    template: "%s | Neurva",
   },
   description:
-    "BrainApp Media is a revenue-focused digital marketing agency in Pakistan helping businesses prove marketing impact through Google Ads, Meta Ads, SEO, automation, and conversion strategy.",
+    "A new mindset for a new reality. Explore the Neurva experience — work, create, explore, or don't.",
   keywords: [
     "digital marketing agency Pakistan",
     "Google Ads Pakistan",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#083A74",
+  themeColor: "#efe0d4",
   width: "device-width",
   initialScale: 1,
 };
@@ -58,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body className={instrumentSans.variable}>
         <div className="noise-overlay" />
         {children}
       </body>
